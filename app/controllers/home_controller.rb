@@ -4,16 +4,28 @@ class HomeController < ApplicationController
 
   def extract
     id = params[:q].sub(/\/$/,'').gsub(/.*\//,'')
-    
+
     case params[:qq]['type']
     when 'cinii_articles'
-      @result = Sist02::CiNii.article_ref(id)
+      begin
+        @result = Sist02::CiNii.article_ref(id)
+      rescue => e
+        @result = e
+      end
     when 'cinii_books'
-      @result = Sist02::CiNii.book_ref(id)
+      begin
+        @result = Sist02::CiNii.book_ref(id)
+      rescue => e
+        @result = e
+      end
     when 'cinii_dessertations'
-      @result = Sist02::CiNii.dissertations_ref(id)
+      begin
+        @result = Sist02::CiNii.dissertations_ref(id)
+      rescue => e
+        @result = e
+      end
     else
-      @result = ''
+      @result = 'Error'
     end
   end
 end
