@@ -1,0 +1,8 @@
+<h1>Home#index</h1>
+<p>Find me in app/views/home/index.html.erb</p>
+
+<%= form_tag('/home/extract') do  %>
+  <%= text_field_tag :q, nil,:autocomplete => :off, :placeholder => 'URL' %>
+  <%= select :qq, :type, [["CiNii Articles", "cinii_articles"], ["CiNii Books", "cinii_books"], ["CiNii Dissertations", "cinii_dissertations"]] %>
+  <%= submit_tag "sist02に変換" %>
+<% end %>
