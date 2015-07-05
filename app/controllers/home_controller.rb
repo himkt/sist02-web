@@ -4,8 +4,9 @@ class HomeController < ApplicationController
 
   def extract
     id = params[:q].sub(/\/$/,'').gsub(/.*\//,'')
+    @type = params[:qq]['type']
 
-    case params[:qq]['type']
+    case @type
     when 'cinii_articles'
       begin
         @result = Sist02::CiNii.article_ref(id)
