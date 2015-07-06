@@ -2,7 +2,7 @@
 <h1>SIST02-WEB</h1>
 <p>引用を簡単にしたい</p>
 <p>このシステムは現在開発中です。バグだらけなはずなので一緒に開発しませんか</p>
-<p>開発 - <a href="https://github.com/himkt/sist02-web">GitHub</a></p>
+<p>開発に貢献する - <a href="https://github.com/himkt/sist02-web">GitHub</a></p>
 <%= form_tag('/home/extract', :class=>'form-inline') do  %>
   <%= text_field_tag :q, nil,:autocomplete => :off, :placeholder => 'URLもしくはNAID/NCID', :class=>'form-control' %>
   <%= select :qq, :type, [["CiNii Articles", "cinii_articles"], ["CiNii Books", "cinii_books"], ["CiNii Dissertations", "cinii_dissertations"]], {}, {:class=>'form-control'} %>
